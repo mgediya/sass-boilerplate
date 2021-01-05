@@ -1,0 +1,188 @@
+// @import '../abstracts/_core' 
+// Take away comment if want to separate file and remove _ before file name
+
+/* Slider */
+
+.slick-slider {
+	position: relative;
+	display: block;
+	box-sizing: border-box;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-ms-touch-action: pan-y;
+	touch-action: pan-y;
+	-webkit-tap-highlight-color: transparent;
+
+	.slick-list {
+		position: relative;
+		overflow: hidden;
+		display: block;
+		margin: 0;
+		padding: 0;
+
+		&:focus {
+			outline: none;
+		}
+
+		&.dragging {
+			cursor: pointer;
+			cursor: hand;
+		}
+	}
+
+	.slick-track,
+	.slick-list {
+		-webkit-transform: translate3d(0, 0, 0);
+		-moz-transform: translate3d(0, 0, 0);
+		-ms-transform: translate3d(0, 0, 0);
+		-o-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
+
+	.slick-track {
+		position: relative;
+		left: 0;
+		top: 0;
+		display: flex;
+		margin-left: auto;
+		margin-right: auto;
+
+		.slick-loading & {
+			visibility: hidden;
+		}
+	}
+
+	@at-root .slick-slide {
+		height: 100%;
+		min-height: 1px;
+
+		[dir="rtl"] & {
+			float: right;
+		}
+
+		img {
+			display: block;
+		}
+
+		&.slick-loading img {
+			display: none;
+		}
+
+		display: none;
+
+		&.dragging img {
+			pointer-events: none;
+		}
+
+		.slick-initialized & {
+			display: block;
+		}
+
+		.slick-loading & {
+			visibility: hidden;
+		}
+
+		.slick-vertical & {
+			display: block;
+			height: auto;
+			border: 1px solid transparent;
+		}
+	}
+
+	&.slick-dotted {
+		margin-bottom: 50px;
+	}
+
+	// dots navigation
+	.slick-dots {
+		position: absolute;
+		bottom: -50px;
+		padding: 0;
+		width: 100%;
+		text-align: center;
+
+		li {
+			display: inline-block;
+			vertical-align: middle;
+			list-style: none;
+			line-height: 0;
+			padding-left: 5px;
+			padding-right: 5px;
+
+			button {
+				width: 20px;
+				height: 20px;
+				padding: 0;
+				border: 2px solid $secondary;
+				border-radius: 100%;
+				font-size: 0;
+				background-color: $primary;
+				transition: background-color ease 0.3s, opacity ease 0.3s;
+
+				&:focus,
+				&:hover {
+					outline: none;
+					cursor: pointer;
+					background-color: $secondary;
+					opacity: 0.8;
+				}
+			}
+
+			&.slick-active button {
+				background-color: $secondary;
+			}
+		}
+	}
+
+}
+
+//  arrows 
+.custom-arrow {
+	.slick-arrow {
+		position: relative;
+		top: -10px;
+	}
+}
+
+.slick-arrow {
+	&.slick-hidden {
+		display: none;
+	}
+
+	position: absolute;
+	top: calc(50% - 20px);
+	z-index: 999;
+	padding: 0;
+	width: 40px;
+	height: 40px;
+	font-size: 0;
+	background-color: transparent;
+	box-shadow: none;
+	border:10px solid $primary;
+	border-top: 0;
+	border-right: 0;
+	transition: border ease 0.3s;
+
+	&:focus,
+	&:hover {
+		outline: none;
+		cursor: pointer;
+		border-color: $secondary;
+	}
+
+	&.slick-prev {
+		left: 0;
+		border-top: 0;
+		border-right: 0;
+		transform: rotate(45deg);
+	}
+
+	&.slick-next {
+		right: 0;
+		transform: rotate(-135deg);
+	}
+}

@@ -1,0 +1,347 @@
+/**
+ * Main content containers
+ */
+.container {
+    width: 100%;
+    max-width: $container-width + $gutters;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $gutters / 2;
+    padding-right: $gutters / 2;
+
+    &-fluid {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-right: 50px;
+        padding-left: 50px;
+    }
+}
+
+/* row and column */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -$gutters / 2;
+    margin-left: -$gutters / 2;
+
+    &.no-gutters {
+        margin-right: 0;
+        margin-left: 0;
+
+        > [class*="cell-"] {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+}
+
+[class*="cell-"] {
+    padding-left: $gutters / 2;
+    padding-right: $gutters / 2;
+    position: relative;
+    width: 100%;
+}
+
+/* align item */
+.d {
+    &-none {
+        display: none;
+    }
+
+    &-block {
+        display: block;
+    }
+
+    &-flex {
+        display: flex;
+        flex-wrap: wrap;
+
+        &-inline {
+            display: inline-flex;
+        }
+
+        img {
+            align-self: center;
+        }
+    }
+}
+
+.flex-nowrap {
+    flex-wrap: nowrap;
+}
+
+.align {
+    &-items {
+        &-start {
+            align-items: flex-start;
+        }
+
+        &-center {
+            align-items: center;
+        }
+
+        &-end {
+            align-items: flex-end;
+        }
+    }
+
+    &-content-center {
+        align-content: center;
+    }
+
+    &none {
+        float: none;
+        margin: 20px 0;
+    }
+
+    &center {
+        display: block;
+        clear: both;
+        margin: 20px auto;
+    }
+
+    &left {
+        float: left;
+        margin: 0 20px 20px 0;
+    }
+
+    &right {
+        float: right;
+        margin: 0 0 20px 20px;
+    }
+}
+
+.justify {
+    &-content {
+        &-start {
+            justify-content: flex-start;
+        }
+
+        &-center {
+            justify-content: center;
+        }
+
+        &-end {
+            justify-content: flex-end;
+        }
+
+        &-between {
+            justify-content: space-between;
+        }
+
+        &-around {
+            justify-content: space-around;
+        }
+
+        &-evenly {
+            justify-content: space-evenly;
+        }
+    }
+}
+
+/* text alignment */
+.text {
+    &-center {
+        text-align: center;
+    }
+
+    &-right {
+        text-align: right;
+    }
+
+    &-left {
+        text-align: left;
+    }
+}
+
+// bg and text color
+@each $name, $color in $bgColor-map {
+    .bg-#{$name} {
+        background-color: $color;
+    }
+
+    .text-#{$name} {
+        color: $color;
+    }
+}
+
+/* column structure */
+$grid-columns: 12;
+
+$sidesY: top, bottom;
+$sidesX: left, right;
+
+@for $i from 1 through $grid-columns {
+    .cell-#{$i} {
+        width: percentage($i / $grid-columns);
+    }
+}
+
+@if $spacing == true {
+    @each $space in $spaceamounts {
+        @each $side in $sidesY {
+            // margin
+            .m#{str-slice($side, 0, 1)}-#{$space},
+            .m-#{$space},
+            .my-#{$space} {
+                margin-#{$side}: #{$space / 16}rem;
+            }
+
+            // padding
+            .p#{str-slice($side, 0, 1)}-#{$space},
+            .p-#{$space},
+            .py-#{$space} {
+                padding-#{$side}: #{$space / 16}rem;
+            }
+        }
+
+        @each $side in $sidesX {
+            // margin
+            .m#{str-slice($side, 0, 1)}-#{$space},
+            .m-#{$space},
+            .mx-#{$space} {
+                margin-#{$side}: #{$space / 16}rem;
+            }
+
+            // padding
+            .p#{str-slice($side, 0, 1)}-#{$space},
+            .p-#{$space},
+            .px-#{$space} {
+                padding-#{$side}: #{$space / 16}rem;
+            }
+        }
+    }
+}
+
+@each $bp-key, $bp in $breakpoints {
+    @include respond-above($bp-key) {
+        @for $i from 1 through $grid-columns {
+            .cell-#{$bp-key}-#{$i} {
+                width: percentage($i / $grid-columns);
+            }
+        }
+
+        @if $spacing == true {
+            @each $space in $spaceamounts {
+                @each $side in $sidesY {
+                    // margin
+                    .m#{str-slice($side, 0, 1)}-#{$bp-key}-#{$space},
+                    .m-#{$bp-key}-#{$space},
+                    .my-#{$bp-key}-#{$space} {
+                        margin-#{$side}: #{$space / 16}rem;
+                    }
+
+                    // padding
+                    .p#{str-slice($side, 0, 1)}-#{$bp-key}-#{$space},
+                    .p-#{$bp-key}-#{$space},
+                    .py-#{$bp-key}-#{$space} {
+                        padding-#{$side}: #{$space / 16}rem;
+                    }
+                }
+
+                @each $side in $sidesX {
+                    // margin
+                    .m#{str-slice($side, 0, 1)}-#{$bp-key}-#{$space},
+                    .m-#{$bp-key}-#{$space},
+                    .mx-#{$bp-key}-#{$space} {
+                        margin-#{$side}: #{$space / 16}rem;
+                    }
+
+                    // padding
+                    .p#{str-slice($side, 0, 1)}-#{$bp-key}-#{$space},
+                    .p-#{$bp-key}-#{$space},
+                    .px-#{$bp-key}-#{$space} {
+                        padding-#{$side}: #{$space / 16}rem;
+                    }
+                }
+            }
+        }
+
+        @if $advance-utilities == true {
+            .d {
+                &-#{$bp-key} {
+                    &-none {
+                        display: none;
+                    }
+
+                    &-block {
+                        display: block;
+                    }
+
+                    &-flex {
+                        display: flex;
+                    }
+                }
+            }
+
+            .align {
+                &-#{$bp-key} {
+                    &-items {
+                        &-start {
+                            align-items: flex-start;
+                        }
+
+                        &-center {
+                            align-items: center;
+                        }
+
+                        &-end {
+                            align-items: flex-end;
+                        }
+                    }
+
+                    &-content-center {
+                        align-content: center;
+                    }
+                }
+            }
+
+            .justify {
+                &-#{$bp-key} {
+                    &-content {
+                        &-start {
+                            justify-content: flex-start;
+                        }
+
+                        &-center {
+                            justify-content: center;
+                        }
+
+                        &-end {
+                            justify-content: flex-end;
+                        }
+
+                        &-between {
+                            justify-content: space-between;
+                        }
+
+                        &-around {
+                            justify-content: space-around;
+                        }
+
+                        &-evenly {
+                            justify-content: space-evenly;
+                        }
+                    }
+                }
+            }
+
+            .text {
+                &-#{$bp-key} {
+                    &-center {
+                        text-align: center;
+                    }
+
+                    &-right {
+                        text-align: right;
+                    }
+
+                    &-left {
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+}

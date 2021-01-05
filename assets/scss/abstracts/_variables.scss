@@ -1,0 +1,88 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+// Regular ( Open Sans ) font family
+$font-family-base:  'Open Sans', 'Arial', sans-serif !default;
+// $font-family-hgroup:  'Open Sans', 'Arial', sans-serif !default;
+
+// body contect text size
+$font-size-base:  rem(16px) !default;
+$font-size-small: rem(14px) !default;
+$font-size-large: rem(18px) !default;
+
+// Colors
+$primary :   #1eb2a6 !default;
+$secondary : #ffa34d !default;
+
+// Start with assigning color names to specific hex values.
+$white:  #ffffff !default;
+$black:  #000000 !default;
+$gray:   #dee3e2 !default;
+
+// Body color
+$body-bg:       $white !default;
+$body-color:    $black !default;
+
+// Text color
+$text-color:   $black !default ;
+
+// Heading font Size
+$h1-size: rem(52px) !default;
+$h2-size: rem(42px) !default;
+$h3-size: rem(36px) !default;
+$h4-size: rem(24px) !default;
+$h5-size: rem(20px) !default;
+$h6-size: rem(18px) !default;
+
+$hgroup-margin-bottom: rem(15px) !default;
+$hgroup-font-family:   inherit !default;
+$hgroup-font-weight:   700 !default;
+$hgroup-line-height:   1.1 !default;
+$hgroup-color:         $text-color !default;
+
+// Forms
+$label-color:           $text-color;
+$label-font-weight:     400;
+$label-font-family:     $font-family-base;
+$label-font-size:       $font-size-small;
+
+$input-bg:                 $white;
+$input-font-family:        $font-family-base;
+$input-font-size:          $font-size-base;
+$input-font-weight:        400;
+$input-color:              $black;
+$input-color-placeholder:  rgba($black,0.5);
+$input-height-base:        rem(42px);
+$input-radius:             0;
+$input-border-color:       $secondary;
+$input-border-color-focus: $secondary;
+$textarea-height-base:     rem(150px);
+
+// Set assets path
+$img: '../images'; // background-img:url( #{$img}/)
+$fonts: '../fonts';
+
+// Container's maximum width
+$container-width: rem(1170px) !default;
+$gutters : rem(30px);
+
+// Media Query breakpoints.
+$breakpoints: (
+  'sm': 576px, // Small devices (landscape phones, 576px and up)
+  'md': 768px, // Medium devices (tablets, 768px and up)
+  'lg': 992px, // Large devices (desktops, 992px and up)
+  'xl': 1200px // Extra large devices (large desktops, 1200px and up)
+);
+
+// Advance utilities
+$advance-utilities : false;
+
+// Spacing : padding and margin
+$spacing : true;
+$spaceamounts: (30);
+
+// Background and Text color classes(ex: .bg-white and .text-white)
+$bgColor-map: (
+  'white' : $white,
+  'black' : $black
+);

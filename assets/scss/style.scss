@@ -1,0 +1,14 @@
+// variable and mixin
+@import 'abstracts/core' ;
+
+// bs4 vender 
+@import 'vendors/core';
+
+// base
+@import 'base/core';
+
+// layout
+@import 'layout/core';
+
+// components
+@import 'components/core'; 

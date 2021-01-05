@@ -1,0 +1,229 @@
+/**
+ * Basic typography style for copy text
+ */
+html {
+	@include rem-baseline(16px);
+}
+body {
+	min-height: 100%;
+	height: auto;
+	color: $body-color;
+	font-size: $font-size-base;
+	font-family: $font-family-base;
+	line-height: 1.7;
+	background-color: $body-bg;
+	// @include custom-scroll;
+	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+		height: 100%;
+	}
+}
+
+// Heading style
+@for $i from 1 through 6 {
+	h#{$i},
+	.h#{$i} {
+		margin-bottom: $hgroup-margin-bottom;
+		font-family: $hgroup-font-family;
+		font-weight: $hgroup-font-weight;
+		line-height: $hgroup-line-height;
+		color: $hgroup-color;
+
+		a {
+			color: inherit;
+			text-decoration: none;
+		}
+	}
+}
+
+h1,
+.h1 {
+	font-size: $h1-size;
+
+	@include respond-below(md) {
+		font-size: $h1-size / 1.5;
+	}
+}
+
+h2,
+.h2 {
+	font-size: $h2-size;
+
+	@include respond-below(md) {
+		font-size: $h2-size / 1.5;
+	}
+}
+
+h3,
+.h3 {
+	font-size: $h3-size;
+
+	@include respond-below(md) {
+		font-size: $h3-size / 1.5;
+	}
+}
+
+h4,
+.h4 {
+	font-size: $h4-size;
+
+	@include respond-below(md) {
+		font-size: $h4-size / 1.2;
+	}
+}
+
+h5,
+.h5 {
+	font-size: $h5-size;
+
+	@include respond-below(md) {
+		font-size: $h5-size / 1.1;
+	}
+}
+
+h6,
+.h6 {
+	font-size: $h6-size;
+
+	@include respond-below(md) {
+		font-size: $h6-size / 1.1;
+	}
+}
+
+p {
+	margin-bottom: 15px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+ul {
+	padding-left: rem(10px);
+	margin-bottom: rem(15px);
+
+	ul {
+		margin-bottom: 0;
+	}
+
+	li {
+		padding-top: rem(6px);
+		padding-bottom: rem(6px);
+
+		&:last-child {
+			padding-bottom: 0;
+		}
+	}
+}
+
+ol {
+	padding-left: rem(20px);
+	margin-bottom: rem(15px);
+
+	ol {
+		margin-bottom: 0;
+	}
+
+	li {
+		padding-top: rem(6px);
+		padding-bottom: rem(6px);
+
+		&:last-child {
+			padding-bottom: 0;
+		}
+	}
+}
+
+blockquote {
+	position: relative;
+	display: block;
+	margin-bottom: rem(25px);
+	padding: rem(20px) rem(20px);
+	text-align: left;
+	line-height: 2;
+	font-size: $font-size-large;
+	font-style: italic;
+	color: $text-color;
+	background-color: $gray;
+	border-left: rem(4px) solid $primary;
+
+	p {
+		font-size: inherit;
+		font-weight: inherit;
+		line-height: inherit;
+		color: inherit;
+	}
+}
+
+hr {
+	height: 0;
+	margin: rem(10px) auto rem(40px);
+	border: 0 $black solid;
+	border-top-width: rem(1px);
+	overflow: visible;
+}
+
+img {
+	display: inline-block;
+	height: auto;
+	max-width: 100%;
+	vertical-align: top;
+	border: none;
+
+	&[src$=".svg"] {
+		width: 100%;
+		height: auto;
+		display: inline-block;
+		vertical-align: top;
+	}
+}
+picture {
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Link
+------------------------------------------------------------------------------*/
+a {
+	color: $primary;
+	transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
+
+	&:hover,
+	&:focus {
+		color: $black;
+		text-decoration: underline;
+		outline: none;
+	}
+}
+
+/* Tables
+------------------------------------------------------------------------------*/
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+
+	td {
+		text-align: left;
+		font-weight: normal;
+	}
+}
+
+.table-responsive {
+	display: block;
+	width: 100%;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.table-bordered {
+	width: 100%;
+	max-width: 100%;
+	text-align: left;
+
+	td,
+	th {
+		vertical-align: bottom;
+		border-bottom: rem(1px) solid $gray;
+		padding: rem(10px);
+	}
+}

@@ -1,0 +1,44 @@
+.btn {
+	display: inline-block;
+	padding: rem(10px) rem(15px);
+	vertical-align: top;
+	color: $white;
+	font-size: $font-size-base;
+	line-height: 1.5;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	border: none;
+	border-radius: 0px;
+	background-color: $primary;
+	transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
+
+	&:hover,
+	&:focus {
+		cursor: pointer;
+		color: $white;
+		text-decoration: none;
+		background-color: $secondary;
+	}
+	&-link {
+		margin-bottom: rem(2px);
+		color: $primary;
+		font-size: $font-size-base;
+		text-decoration: none;
+		border-bottom: rem(1px) solid $primary;
+
+		&:hover,
+		&:focus {
+			color: $secondary;
+			text-decoration: none;
+		}
+	}
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	@extend .btn;
+	-webkit-appearance: button;
+}
