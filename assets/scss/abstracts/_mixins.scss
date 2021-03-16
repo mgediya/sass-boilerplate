@@ -137,3 +137,17 @@
         background: $primary;
     }
 }
+
+// Container Spacing
+@mixin container-space($position: "both", $value: $container-width) {
+    @if ($position == "left") {
+        padding-left: calc((100% - #{$value}) / 2);
+    } @else if($position == "right") {
+        padding-right: calc((100% - #{$value}) / 2);
+    } @else if($position == "both") {
+        padding-left: calc((100% - #{$value}) / 2);
+        padding-right: calc((100% - #{$value}) / 2);
+    } @else {
+        @error 'Wrong input "#{$position}", pleaase use "left" or "right"';
+    }
+}
