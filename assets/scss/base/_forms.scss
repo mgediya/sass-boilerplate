@@ -25,10 +25,7 @@ input[type="tel"],
 input[type="search"],
 textarea {
 	-webkit-appearance: none;
-	outline: none;
-	@include placeholder {
-		color: $input-color-placeholder;
-	}
+	outline: none;	
 }
 
 input[type="url"],
@@ -52,6 +49,10 @@ select {
 	&:focus {
 		border-color: $input-border-color-focus;
 		outline: none;
+	}
+	@include placeholder {
+		color: $input-color-placeholder;
+		opacity: 1;
 	}
 }
 
