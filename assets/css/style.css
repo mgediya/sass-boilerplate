@@ -1157,20 +1157,24 @@ input[type="submit"] {
   input[type="submit"]:hover, .btn:focus, button:focus,
   input[type="button"]:focus,
   input[type="reset"]:focus,
-  input[type="submit"]:focus {
+  input[type="submit"]:focus, a:hover .btn, a:hover button,
+  a:hover input[type="button"],
+  a:hover input[type="reset"],
+  a:hover input[type="submit"] {
     cursor: pointer;
     color: #ffffff;
     text-decoration: none;
     background-color: #ffa34d; }
-  .btn-link {
-    margin-bottom: 0.13rem;
-    color: #1eb2a6;
-    font-size: 1rem;
-    text-decoration: none;
-    border-bottom: 0.07rem solid #1eb2a6; }
-    .btn-link:hover, .btn-link:focus {
-      color: #ffa34d;
-      text-decoration: none; }
+
+.btn-link {
+  margin-bottom: 0.13rem;
+  color: #1eb2a6;
+  font-size: 1rem;
+  text-decoration: none;
+  border-bottom: 1px solid #1eb2a6; }
+  .btn-link:hover, .btn-link:focus, a:hover .btn-link {
+    color: #ffa34d;
+    text-decoration: none; }
 
 button,
 input[type="button"],

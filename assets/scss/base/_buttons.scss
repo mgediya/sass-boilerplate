@@ -1,4 +1,4 @@
-.btn {
+%btn {
 	display: inline-block;
 	padding: rem(10px) rem(15px);
 	vertical-align: top;
@@ -14,21 +14,26 @@
 	transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
 
 	&:hover,
-	&:focus {
+	&:focus,
+	a:hover & {
 		cursor: pointer;
 		color: $white;
 		text-decoration: none;
 		background-color: $secondary;
 	}
+}
+.btn {
+	@extend %btn;
 	&-link {
 		margin-bottom: rem(2px);
 		color: $primary;
 		font-size: $font-size-base;
 		text-decoration: none;
-		border-bottom: rem(1px) solid $primary;
+		border-bottom: 1px solid $primary;
 
 		&:hover,
-		&:focus {
+		&:focus,
+		a:hover & {
 			color: $secondary;
 			text-decoration: none;
 		}
@@ -39,6 +44,6 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	@extend .btn;
+	@extend %btn;
 	-webkit-appearance: button;
 }
