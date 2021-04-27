@@ -81,6 +81,34 @@
     font-size: pxtopercent($value);
 }
 
+/* mini laptop resolution 1349 X 662 and 1246 X 681 and 1218 X 672 */
+@mixin mini-laptop {
+    @media (min-width: 1100px) and (max-height: 800px) {
+        @content;
+    }
+}
+// mobile
+@mixin mobile {
+    @media (max-width: 720px) and (orientation: portrait) {
+        @content;
+    }
+    @media (max-width: 992px) and (orientation: landscape) {
+        @content;
+    }
+}
+// portrait
+@mixin mobile-portrait {
+    @media (max-width: 720px) and (orientation: portrait) {
+        @content;
+    }
+}
+// Landscape
+@mixin mobile-landscape {
+    @media (max-width: 992px) and (orientation: landscape) {
+        @content;
+    }
+}
+
 // row space
 @mixin row-space($value) {
     margin-right: -$value;
@@ -139,15 +167,35 @@
 }
 
 // Container Spacing
-@mixin container-space($position: "both", $value: $container-width) {
+@mixin container-space($position: "both", $value: $container-width + $gutters) {
     @if ($position == "left") {
         padding-left: calc((100% - #{$value}) / 2);
+        > div {
+            padding-left: $gutters / 2;
+        }
     } @else if($position == "right") {
         padding-right: calc((100% - #{$value}) / 2);
+        > div {
+            padding-right: $gutters / 2;
+        }
     } @else if($position == "both") {
         padding-left: calc((100% - #{$value}) / 2);
         padding-right: calc((100% - #{$value}) / 2);
+        > div {
+            padding-left: $gutters / 2;
+            padding-right: $gutters / 2;
+        }
     } @else {
-        @error 'Wrong input "#{$position}", pleaase use "left" or "right"';
+        @error 'Wrong input "#{$position}", please use "left" or "right"';
+    }
+}
+
+// All heading
+@mixin hgroup {
+    @for $i from 1 through 6 {
+        h#{$i},
+        .h#{$i} {
+            @content;
+        }
     }
 }
