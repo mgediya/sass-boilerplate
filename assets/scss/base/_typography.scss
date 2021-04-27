@@ -10,7 +10,7 @@ body {
 	color: $body-color;
 	font-size: $font-size-base;
 	font-family: $font-family-base;
-	line-height: 1.7;
+	line-height: 1.5;
 	background-color: $body-bg;
 	// @include custom-scroll;
 	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
@@ -19,19 +19,17 @@ body {
 }
 
 // Heading style
-@for $i from 1 through 6 {
-	h#{$i},
-	.h#{$i} {
-		margin-bottom: $hgroup-margin-bottom;
-		font-family: $hgroup-font-family;
-		font-weight: $hgroup-font-weight;
-		line-height: $hgroup-line-height;
-		color: $hgroup-color;
+@include hgroup {
+	margin-bottom: $hgroup-margin-bottom;
+	font-family: $hgroup-font-family;
+	font-weight: $hgroup-font-weight;
+	line-height: $hgroup-line-height;
+	color: $hgroup-color;
 
-		a {
-			color: inherit;
-			text-decoration: none;
-		}
+	a {
+		display: block;
+		color: inherit;
+		text-decoration: none;
 	}
 }
 
