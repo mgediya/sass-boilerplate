@@ -1,66 +1,66 @@
 <!DOCTYPE HTML>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>All | HTML Boilerplate 1.1.1</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <meta name="description" content="" />
-        <meta name="keywords" content="">
-        <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
-        <link rel="icon" type="image/png" href="assets/images/favicon.png" />
 
-        <!-- main css -->
-        <link href="assets/css/style.css" rel="stylesheet" />
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <title>All | HTML Boilerplate 1.1.1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="" />
+    <meta name="keywords" content="">
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
 
-        <!-- start -->
-        <div class="wrapper">
-            <div class="main-container">
+    <!-- main css -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- start -->
+    <div class="wrapper">
+        <div class="main-container">
+            <!-- content area part -->
+            <div class="main-content py-30">
                 <!-- content area part -->
-                <div class="main-content pt-50 pb-50">
-                    <!-- content area part -->
-                    <section class="container">
-                        <div class="row justify-content-center">
-                            <div class="cell-9">
-                                <!-- header part -->
-                                <div class="pt-50 pb-50">
-                                    <h1>All pages URLs</h1>
-                                </div>
-                                <table class="table-bordered">
-                                    <tr>
-                                        <th>No.</th>
-                                        <th>Name of page</th>
-                                        <th>Link of page</th>
-                                    </tr>
-                                    <tr>
-                                        <td>Home</td>
-                                        <td><a href="index.html"></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Typography</td>
-                                        <td><a href="typography.html"></a></td>
-                                    </tr>
-                                </table>
+                <section class="container">
+                    <div class="row justify-content-center">
+                        <div class="cell-9">
+                            <!-- header part -->
+                            <div class="pt-50 pb-50">
+                                <h1>All pages URLs</h1>
                             </div>
+                            <table class="table-bordered">
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Name of page</th>
+                                    <th>Link of page</th>
+                                </tr>
+                                <tr>
+                                    <td>Home</td>
+                                    <td><a href="index.html"></a></td>
+                                </tr>
+                                <tr>
+                                    <td>Typography</td>
+                                    <td><a href="typography.html"></a></td>
+                                </tr>
+                            </table>
                         </div>
-                    </section>
-                </div>
+                    </div>
+                </section>
             </div>
         </div>
+    </div>
+    <script>
+        let tableTr = document.querySelectorAll('table tr');
+        for (let i = 1; i < tableTr.length; i++) {
+            let that = tableTr[i];
+            let a = that.querySelector('a');
+            a.innerText = a.getAttribute('href').split('.')[0];
+            a.setAttribute('target', '_blank');
+            that.prepend(document.createElement('td'));
+            that.childNodes[0].innerText = i;
+        }
+    </script>
+</body>
 
-        <!-- jquery library -->
-        <script src="assets/js/jquery-3.5.1.min.js"></script>
-        <!--<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>-->
-        <script>
-            $(document).ready(function () {
-                $('table tr:not(:first)').each(function (index) {
-                    var link_name = $(this).find('a').attr('href');
-                    $(this).find('a').text(link_name.split('.')[0]).attr("target", "_blank");;
-                    $(this).prepend('<td class="num">');
-                    $('table .num').text(function (index) { return + (index + 1); });
-                });
-            });
-        </script>
-    </body>
 </html>
