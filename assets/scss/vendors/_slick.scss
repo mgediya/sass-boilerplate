@@ -1,4 +1,4 @@
-// @import '../abstracts/_core' 
+// @import '../abstracts/_core'
 // Take away comment if want to separate file and remove _ before file name
 
 /* Slider */
@@ -122,7 +122,7 @@
 				font-size: 0;
 				background-color: $primary;
 				transition: background-color ease 0.3s, opacity ease 0.3s;
-
+				outline: none;
 				&:focus,
 				&:hover {
 					outline: none;
@@ -137,10 +137,9 @@
 			}
 		}
 	}
-
 }
 
-//  arrows 
+//  arrows
 .custom-arrow {
 	.slick-arrow {
 		position: relative;
@@ -162,7 +161,7 @@
 	font-size: 0;
 	background-color: transparent;
 	box-shadow: none;
-	border:10px solid $primary;
+	border: 10px solid $primary;
 	border-top: 0;
 	border-right: 0;
 	transition: border ease 0.3s;
