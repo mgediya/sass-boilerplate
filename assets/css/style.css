@@ -1,4 +1,6 @@
+/* Note: If need Disable Decimal-value functionilty open function.scss file */
 /* mini laptop resolution 1349 X 662 and 1246 X 681 and 1218 X 672 */
+/* Mozila Firefox */
 /* Slider */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap");
 .slick-slider {
@@ -505,19 +507,22 @@ table {
 /**
  * Main content containers
  */
-.container {
+.container, .container-fluid {
   width: 100%;
-  max-width: 75.01rem;
   margin-left: auto;
   margin-right: auto;
   padding-left: 0.94rem;
   padding-right: 0.94rem; }
+  @media (max-width: 767px) {
+    .container, .container-fluid {
+      padding-left: 1.25rem;
+      padding-right: 1.25rem; } }
+
+.container {
+  max-width: 75.01rem; }
   .container-fluid {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-right: 50px;
-    padding-left: 50px; }
+    padding-right: 3.13rem;
+    padding-left: 3.13rem; }
 
 /* row and column */
 .row {
@@ -533,10 +538,10 @@ table {
       padding-left: 0; }
 
 [class*="cell-"] {
-  padding-left: 0.94rem;
-  padding-right: 0.94rem;
   position: relative;
-  width: 100%; }
+  width: 100%;
+  padding-left: 0.94rem;
+  padding-right: 0.94rem; }
 
 /* align item */
 .d-none {
@@ -1552,19 +1557,18 @@ select:-webkit-autofill:focus {
   width: 100%;
   height: auto;
   /* nav */ }
-  .main-header .navigation {
-    width: 100%;
-    height: auto; }
-    .main-header .navigation ul {
+  .main-header .brand {
+    width: 200px; }
+  .main-header .navigation ul {
+    padding: 0;
+    margin: 0;
+    list-style: none; }
+    .main-header .navigation ul li {
       padding: 0;
       margin: 0;
       list-style: none; }
-      .main-header .navigation ul li {
-        padding: 0;
-        margin: 0;
-        list-style: none; }
-        .main-header .navigation ul li a {
-          text-decoration: none; }
+      .main-header .navigation ul li a {
+        text-decoration: none; }
 
 /*--- footer ---*/
 .main-footer {

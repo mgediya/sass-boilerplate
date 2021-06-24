@@ -2,12 +2,11 @@
 .main-header {
 	width: 100%;
 	height: auto;
-
+	.brand {
+		width: 200px;
+	}
 	/* nav */
 	.navigation {
-		width: 100%;
-		height: auto;
-
 		ul {
 			padding: 0;
 			margin: 0;

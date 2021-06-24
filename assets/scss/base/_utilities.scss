@@ -1,20 +1,24 @@
 /**
  * Main content containers
  */
-.container {
+%container {
     width: 100%;
-    max-width: $container-width + $gutters;
     margin-left: auto;
     margin-right: auto;
     padding-left: $gutters / 2;
     padding-right: $gutters / 2;
-
+    @include respond-below(md) {
+        padding-left: rem(20px);
+        padding-right: rem(20px);
+    }
+}
+.container {
+    @extend %container;
+    max-width: $container-width + $gutters;
     &-fluid {
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        padding-right: 50px;
-        padding-left: 50px;
+        @extend %container;
+        padding-right: rem(50px);
+        padding-left: rem(50px);
     }
 }
 
@@ -22,8 +26,8 @@
 .row {
     display: flex;
     flex-wrap: wrap;
-    margin-right: -$gutters / 2;
-    margin-left: -$gutters / 2;
+    margin-right: -$row-gutters / 2;
+    margin-left: -$row-gutters / 2;
 
     &.no-gutters {
         margin-right: 0;
@@ -37,10 +41,10 @@
 }
 
 [class*="cell-"] {
-    padding-left: $gutters / 2;
-    padding-right: $gutters / 2;
     position: relative;
     width: 100%;
+    padding-left: $row-gutters / 2;
+    padding-right: $row-gutters / 2;
 }
 
 /* align item */

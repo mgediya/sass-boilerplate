@@ -63,13 +63,13 @@
         // If one or both of the breakpoints don't exist.
     } @else {
         // If lower breakpoint is invalid.
-        @if (map-has-key($breakpoints, $lower) == false) {
+        @if (map-has-key($breakpoints, $lower) ==false) {
             // Log a warning.
             @warn 'Your lower breakpoint was invalid: #{$lower}.';
         }
 
         // If upper breakpoint is invalid.
-        @if (map-has-key($breakpoints, $upper) == false) {
+        @if (map-has-key($breakpoints, $upper) ==false) {
             // Log a warning.
             @warn 'Your upper breakpoint was invalid: #{$upper}.';
         }
@@ -87,21 +87,25 @@
         @content;
     }
 }
+
 // mobile
 @mixin mobile {
     @media (max-width: 720px) and (orientation: portrait) {
         @content;
     }
+
     @media (max-width: 992px) and (orientation: landscape) {
         @content;
     }
 }
+
 // portrait
 @mixin mobile-portrait {
     @media (max-width: 720px) and (orientation: portrait) {
         @content;
     }
 }
+
 // Landscape
 @mixin mobile-landscape {
     @media (max-width: 992px) and (orientation: landscape) {
@@ -109,13 +113,21 @@
     }
 }
 
+/* Mozila Firefox */
+@mixin firefox {
+    @-moz-document url-prefix() {
+        @content;
+    }
+}
+
 // row space
 @mixin row-space($value) {
-    margin-right: -$value;
-    margin-left: -$value;
+    margin-right: rem(-$value/2);
+    margin-left: rem(-$value/2);
+
     [class*="cell-"] {
-        padding-left: $value;
-        padding-right: $value;
+        padding-left: rem($value/2);
+        padding-right: rem($value/2);
     }
 }
 
@@ -124,25 +136,28 @@
     &::-webkit-input-placeholder {
         @content;
     }
+
     &:-moz-placeholder {
         @content;
     }
+
     &::-moz-placeholder {
         @content;
     }
+
     &:-ms-input-placeholder {
         @content;
     }
 }
 
-// icon font : @include icon-font("\67");
-@mixin icon-font($content) {
-    font-family: "zealplus" !important;
+// icon font : @include icon("\67");
+@mixin icon($content) {
+    content: $content;
+    font-family: $icon-family;
     font-style: normal;
     font-variant: normal;
     font-weight: normal;
     text-transform: none;
-    content: $content;
 }
 
 // custom scroll
@@ -150,43 +165,49 @@
     &::-webkit-scrollbar {
         width: 10px;
     }
+
     &::-webkit-scrollbar-track {
         border-radius: 10px;
         -webkit-border-radius: 10px;
         -webkit-box-shadow: inset 0 0 6px rgba($black, 0.3);
     }
+
     &::-webkit-scrollbar-thumb {
         -webkit-border-radius: 10px;
         border-radius: 10px;
         background: rgba($color1, 0.8);
         -webkit-box-shadow: inset 0 0 6px rgba($black, 0.5);
     }
+
     &::-webkit-scrollbar-thumb:window-inactive {
         background: $primary;
     }
 }
 
 // Container Spacing
-@mixin container-space($position: "both", $value: $container-width + $gutters) {
-    @if ($position == "left") {
+@mixin container-space($position: "", $value: $container-width + $gutters) {
+    @if ($position== "left") {
         padding-left: calc((100% - #{$value}) / 2);
+
         > div {
             padding-left: $gutters / 2;
+
+            @include respond-below(md) {
+                padding-left: rem(20px);
+            }
         }
-    } @else if($position == "right") {
+    } @else if($position== "right") {
         padding-right: calc((100% - #{$value}) / 2);
+
         > div {
             padding-right: $gutters / 2;
-        }
-    } @else if($position == "both") {
-        padding-left: calc((100% - #{$value}) / 2);
-        padding-right: calc((100% - #{$value}) / 2);
-        > div {
-            padding-left: $gutters / 2;
-            padding-right: $gutters / 2;
+
+            @include respond-below(md) {
+                padding-right: rem(20px);
+            }
         }
     } @else {
-        @error 'Wrong input "#{$position}", please use "left" or "right"';
+        @error 'Wrong input container-space(#{$position}), Please use container-space(left) or container-space(right)';
     }
 }
 
@@ -198,4 +219,28 @@
             @content;
         }
     }
+}
+
+// Picture Image
+@mixin pictureImg {
+    picture {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+// Flex-center
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

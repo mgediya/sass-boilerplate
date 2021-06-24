@@ -1,24 +1,21 @@
-$base:  16px;
+$base: 16px;
+$decimal-value: true;
 
 @function decimal-round($number, $digits: 0, $mode: round) {
     $n: 1;
 
     // $number must be a number
-    @if type-of($number) != number {
+    @if type-of($number) !=number {
         @warn "#{$number} is not a number.";
-
         @return $number;
     }
 
     // $digits must be a unitless number
-    @if type-of($digits) != number {
+    @if type-of($digits) !=number {
         @warn "#{$digits} is not a number.";
-
         @return $number;
-    }
-    @else if not unitless($digits) {
+    } @else if not unitless($digits) {
         @warn "#{$digits} has a unit.";
-
         @return $number;
     }
 
@@ -26,18 +23,14 @@ $base:  16px;
         $n: $n * 10;
     }
 
-    @if $mode == round {
+    @if $mode==round {
         @return round($number * $n) / $n;
-    }
-    @else if $mode == ceil {
+    } @else if $mode==ceil {
         @return ceil($number * $n) / $n;
-    }
-    @else if $mode == floor {
+    } @else if $mode==floor {
         @return floor($number * $n) / $n;
-    }
-    @else {
+    } @else {
         @warn "#{$mode} is undefined keyword.";
-
         @return $number;
     }
 }
@@ -52,12 +45,20 @@ $base:  16px;
 
 // PX to REM
 @function rem($target, $context: $base) {
-    @return decimal-ceil($target / $context) + 0rem;
+    @if ($decimal-value==true) {
+        @return decimal-ceil($target / $context) + 0rem;
+    } @else {
+        @return ($target / $context)+0rem;
+    }
 }
 
 // PX to EM
 @function em($target, $context: $base) {
-    @return decimal-ceil($target / $context) + 0em;
+    @if ($decimal-value==true) {
+        @return decimal-ceil($target / $context) + 0em;
+    } @else {
+        @return ($target / $context)+0em;
+    }
 }
 
 // PX to PERCENT
@@ -67,5 +68,30 @@ $base:  16px;
 
 // aspect-ratio
 @function aspect-ratio($width, $height) {
-    @return decimal-ceil($height / $width) * 100%;
+    @return $height / $width * 100%;
+}
+
+// common folder path
+@function assets($filetype, $filename) {
+    @return url("../" + $filetype + "/" + $filename);
+}
+
+// image path
+@function image($filename) {
+    @return assets("images", $filename);
+}
+
+// fonts path
+@function font($filename) {
+    @return assets("fonts", $filename);
+}
+
+// icons path
+@function icon-font($filename) {
+    @return assets("fonts/icons-fonts", $filename);
+}
+
+// letter spacing add in px
+@function ls($val) {
+    @return ($val / 1000) * 1em;
 }
