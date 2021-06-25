@@ -71,6 +71,7 @@ $humburgerBase: 30px;
         display: block;
     }
 }
+
 // mobile nav
 #{$mbnav} {
     &__state {
@@ -80,37 +81,33 @@ $humburgerBase: 30px;
         left: -100%;
         z-index: 999;
         width: 80%;
-        max-width: 450px;
+        max-width: rem(450px);
         background: rgba($mbbg, 0.8);
         transition: all 0.3s ease-in-out;
     }
-
-    &.is-open {
-        #{$mbnav}__state {
-            left: 0;
-        }
+    &__inner {
+        max-height: calc(100vh - 60px);
+        padding-bottom: rem(60px);
+        overflow-y: auto;
     }
-
     &__top {
         display: flex;
         justify-content: space-between;
         background: rgba($mbbg, 1);
     }
 
+    // mobile menu logo
     &__logo {
         color: $white;
         padding: 15px;
     }
 
+    // menu
     ul {
         position: relative;
         padding: 0;
         margin: 0;
         list-style: none;
-
-        ul {
-            display: none;
-        }
 
         li {
             position: relative;
@@ -121,7 +118,7 @@ $humburgerBase: 30px;
 
             a {
                 display: block;
-                padding: rem(10px, $menulevel1) em(15px, $menulevel1);
+                padding: em(10px, $menulevel1) em(15px, $menulevel1);
                 color: $text-color;
                 line-height: 1.3;
                 text-decoration: none;
@@ -175,7 +172,9 @@ $humburgerBase: 30px;
                     padding-right: rem(40px);
                 }
             }
-
+        }
+        ul {
+            display: none;
             li {
                 font-size: rem($menulevel2);
 
@@ -194,6 +193,7 @@ $humburgerBase: 30px;
         }
     }
 
+    // backdrop
     &__backdrop {
         position: fixed;
         left: 0;
@@ -207,17 +207,16 @@ $humburgerBase: 30px;
         z-index: -1;
     }
 
+    // after open
     &.is-open {
+        #{$mbnav}__state {
+            left: 0;
+        }
+
         #{$mbnav}__backdrop {
             opacity: 1;
             z-index: 999;
             visibility: visible;
         }
-    }
-
-    &__inner {
-        max-height: calc(100vh - 80px);
-        padding-bottom: 60px;
-        overflow-y: auto;
     }
 }

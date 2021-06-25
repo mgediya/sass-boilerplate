@@ -1462,11 +1462,13 @@ select:-webkit-autofill:focus {
   left: -100%;
   z-index: 999;
   width: 80%;
-  max-width: 450px;
+  max-width: 28.13rem;
   background: rgba(255, 163, 77, 0.8);
   transition: all 0.3s ease-in-out; }
-.mbnav.is-open .mbnav__state {
-  left: 0; }
+.mbnav__inner {
+  max-height: calc(100vh - 60px);
+  padding-bottom: 3.75rem;
+  overflow-y: auto; }
 .mbnav__top {
   display: flex;
   justify-content: space-between;
@@ -1479,8 +1481,6 @@ select:-webkit-autofill:focus {
   padding: 0;
   margin: 0;
   list-style: none; }
-  .mbnav ul ul {
-    display: none; }
   .mbnav ul li {
     position: relative;
     padding: 0;
@@ -1489,7 +1489,7 @@ select:-webkit-autofill:focus {
     font-size: 1.13rem; }
     .mbnav ul li a {
       display: block;
-      padding: 0.56rem 0.84em;
+      padding: 0.56em 0.84em;
       color: #ffffff;
       line-height: 1.3;
       text-decoration: none;
@@ -1525,13 +1525,15 @@ select:-webkit-autofill:focus {
       transform: rotate(0); }
     .mbnav ul li.has-sub > a {
       padding-right: 2.5rem; }
-    .mbnav ul li li {
+  .mbnav ul ul {
+    display: none; }
+    .mbnav ul ul li {
       font-size: 1rem; }
-      .mbnav ul li li a {
+      .mbnav ul ul li a {
         padding-left: 1.57rem; }
-      .mbnav ul li li li {
+      .mbnav ul ul li li {
         font-size: 0.88rem; }
-        .mbnav ul li li li a {
+        .mbnav ul ul li li a {
           padding-left: 2.19rem; }
 .mbnav__backdrop {
   position: fixed;
@@ -1544,14 +1546,12 @@ select:-webkit-autofill:focus {
   background: rgba(255, 163, 77, 0.8);
   opacity: 0;
   z-index: -1; }
+.mbnav.is-open .mbnav__state {
+  left: 0; }
 .mbnav.is-open .mbnav__backdrop {
   opacity: 1;
   z-index: 999;
   visibility: visible; }
-.mbnav__inner {
-  max-height: calc(100vh - 80px);
-  padding-bottom: 60px;
-  overflow-y: auto; }
 
 /*--- header ---*/
 .main-header {
