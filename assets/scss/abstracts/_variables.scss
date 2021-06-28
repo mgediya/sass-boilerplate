@@ -7,7 +7,7 @@ $font-family-base:  'Open Sans', 'Arial', sans-serif !default;
 $icon-family: "zealplus" !important;
 
 // body contect text size
-$font-size-base:  rem($base) !default; //16px Don't change
+$font-size-base:  rem($base) !default; //16px (Don't change)
 
 // Colors
 $primary :   #1eb2a6 !default;
@@ -63,7 +63,7 @@ $fonts: '../fonts';
 
 // Container's maximum width
 $container-width: rem(1170px) !default;
-$gutters: rem(30px);
+$gutters: rem(50px);
 $row-gutters: rem(30px);
 
 // Media Query breakpoints.
