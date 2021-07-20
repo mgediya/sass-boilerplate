@@ -1211,6 +1211,7 @@ input[type="password"],
 input[type="email"],
 input[type="tel"],
 input[type="search"],
+input[type="date"],
 textarea {
   -webkit-appearance: none;
   outline: none; }
