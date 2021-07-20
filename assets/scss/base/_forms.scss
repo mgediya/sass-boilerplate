@@ -23,9 +23,10 @@ input[type="password"],
 input[type="email"],
 input[type="tel"],
 input[type="search"],
+input[type="date"],
 textarea {
 	-webkit-appearance: none;
-	outline: none;	
+	outline: none;
 }
 
 input[type="url"],
@@ -113,7 +114,7 @@ select:-webkit-autofill:focus {
 	.radio-option {
 		display: inline-block;
 		vertical-align: middle;
-		padding: 0 10px;
+		padding: 0 rem(10px);
 		&:first-child {
 			padding-left: 0;
 		}
@@ -143,7 +144,7 @@ select:-webkit-autofill:focus {
 				vertical-align: middle;
 				height: rem(10px);
 				width: rem(10px);
-				margin-top: - rem(3px);
+				margin-top: -rem(3px);
 				margin-right: rem(10px);
 				background-color: $white;
 				border: rem(2px) solid $white;
@@ -154,7 +155,7 @@ select:-webkit-autofill:focus {
 		}
 	}
 }
-// Custom Checkbox 
+// Custom Checkbox
 .checkbox {
 	input[type="checkbox"] {
 		display: none;

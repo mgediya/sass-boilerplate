@@ -1211,6 +1211,7 @@ input[type="password"],
 input[type="email"],
 input[type="tel"],
 input[type="search"],
+input[type="date"],
 textarea {
   -webkit-appearance: none;
   outline: none; }
@@ -1333,7 +1334,7 @@ select:-webkit-autofill:focus {
 .radio-btn-group .radio-option {
   display: inline-block;
   vertical-align: middle;
-  padding: 0 10px; }
+  padding: 0 0.63rem; }
   .radio-btn-group .radio-option:first-child {
     padding-left: 0; }
   .radio-btn-group .radio-option .radio-custom {
@@ -1353,7 +1354,7 @@ select:-webkit-autofill:focus {
       vertical-align: middle;
       height: 0.63rem;
       width: 0.63rem;
-      margin-top: -0.19rem;
+      margin-top: -rem(3px);
       margin-right: 0.63rem;
       background-color: #ffffff;
       border: 0.13rem solid #ffffff;
