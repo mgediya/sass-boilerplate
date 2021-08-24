@@ -2,7 +2,7 @@
 // This file contains all application-wide Sass mixins.
 // -----------------------------------------------------------------------------
 
-// media query mixin
+// Media Query mixin
 //  RESPOND ABOVE
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 // @include respond-above(sm) {}
@@ -188,7 +188,6 @@
 @mixin container-space($position: "", $value: $container-width + $gutters) {
     @if ($position== "left") {
         padding-left: calc((100% - #{$value}) / 2);
-
         > div {
             padding-left: $gutters / 2;
 
@@ -198,7 +197,6 @@
         }
     } @else if($position== "right") {
         padding-right: calc((100% - #{$value}) / 2);
-
         > div {
             padding-right: $gutters / 2;
 
@@ -222,9 +220,10 @@
 }
 
 // Picture Image
-@mixin pictureImg {
+@mixin pictureImg($pos: absolute) {
+    position: relative;
     picture {
-        position: absolute;
+        position: $pos;
         top: 0;
         left: 0;
         width: 100%;
@@ -237,7 +236,17 @@
         }
     }
 }
-
+// Img fit
+@mixin imgFit($pos: absolute) {    
+    img {
+        position: $pos;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
 // Flex-center
 @mixin flex-center {
     display: flex;

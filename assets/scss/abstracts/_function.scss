@@ -95,3 +95,20 @@ $decimal-value: true;
 @function ls($val) {
     @return ($val / 1000) * 1em;
 }
+
+// css min,max,clamp properties
+@function css-function($function, $values...) {
+    @return $function + unquote("(") + $values + unquote(")");
+}
+
+@function min($values...) {
+    @return css-function(min, $values);
+}
+
+@function max($values...) {
+    @return css-function(max, $values);
+}
+
+@function clamp($values...) {
+    @return css-function(clamp, $values);
+}
