@@ -32,6 +32,14 @@ $h3-size: rem(36px) !default;
 $h4-size: rem(24px) !default;
 $h5-size: rem(20px) !default;
 $h6-size: rem(18px) !default;
+$headingSize: (
+  'h1': rem(50px),
+  'h2': rem(40px),
+  'h3': rem(31px),
+  'h4': rem(25px),
+  'h5': rem(20px),
+  'h6': rem(18px),
+);
 
 $hgroup-margin-bottom: rem(15px) !default;
 $hgroup-font-family:   inherit !default;
