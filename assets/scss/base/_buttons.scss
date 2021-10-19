@@ -9,38 +9,39 @@
 	text-transform: uppercase;
 	text-decoration: none;
 	border: none;
-	border-radius: 0px;
-	background-color: $primary;
-	transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
+	border-radius: 0;
+	background-color: $primary-100;
+	transition: background-color 0.3s ease 0s, color 0.3s ease 0s, border-color 0.3s ease 0s;
 
 	&:hover,
 	&:focus,
 	a:hover & {
-		cursor: pointer;
 		color: $white;
 		text-decoration: none;
-		background-color: $secondary;
+		background-color: $secondary-100;
+		cursor: pointer;
 	}
 }
 .btn {
 	@extend %btn;
 	&-link {
 		margin-bottom: rem(2px);
-		color: $primary;
+		color: $primary-100;
 		font-size: $font-size-base;
 		text-decoration: none;
-		border-bottom: 1px solid $primary;
+		border-bottom: 1px solid transparent;
+		transition: background-color 0.3s ease 0s, color 0.3s ease 0s, border-color 0.3s ease 0s;
 
 		&:hover,
 		&:focus,
 		a:hover & {
-			color: $secondary;
+			color: $secondary-100;
 			text-decoration: none;
+			border-color: currentColor;
 		}
 	}
 }
 
-button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {

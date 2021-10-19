@@ -1,17 +1,10 @@
-// @import '../abstracts/_core'
 // Take away comment if want to separate file and remove _ before file name
-
-/* Slider */
-
+/* Slick Slider */
 .slick-slider {
 	position: relative;
 	display: block;
 	box-sizing: border-box;
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
+	--webkit-touch-callout: none;
 	user-select: none;
 	-ms-touch-action: pan-y;
 	touch-action: pan-y;
@@ -94,15 +87,14 @@
 	}
 
 	&.slick-dotted {
-		margin-bottom: 50px;
 	}
 
 	// dots navigation
 	.slick-dots {
-		position: absolute;
-		bottom: -50px;
-		padding: 0;
+		position: relative;
 		width: 100%;
+		margin: rem(15px) 0;
+		padding: 0;
 		text-align: center;
 
 		li {
@@ -117,62 +109,51 @@
 				width: 20px;
 				height: 20px;
 				padding: 0;
-				border: 2px solid $secondary;
+				border: 2px solid $secondary-100;
 				border-radius: 100%;
 				font-size: 0;
-				background-color: $primary;
+				background-color: $primary-100;
 				transition: background-color ease 0.3s, opacity ease 0.3s;
 				outline: none;
 				&:focus,
 				&:hover {
 					outline: none;
 					cursor: pointer;
-					background-color: $secondary;
+					background-color: $secondary-100;
 					opacity: 0.8;
 				}
 			}
 
 			&.slick-active button {
-				background-color: $secondary;
+				background-color: $secondary-100;
 			}
 		}
 	}
 }
 
 //  arrows
-.custom-arrow {
-	.slick-arrow {
-		position: relative;
-		top: -10px;
-	}
-}
-
 .slick-arrow {
-	&.slick-hidden {
-		display: none;
-	}
-
+	--sArrowWidth: 20px;
 	position: absolute;
-	top: calc(50% - 20px);
-	z-index: 9;
+	top: calc(50% - (var(--sArrowWidth) / 2));
 	padding: 0;
-	width: 40px;
-	height: 40px;
+	width: var(--sArrowWidth);
+	height: var(--sArrowWidth);
 	font-size: 0;
 	background-color: transparent;
 	box-shadow: none;
-	border: 10px solid $primary;
+	border: calc(var(--sArrowWidth) / 4) solid $primary-100;
 	border-top: 0;
 	border-right: 0;
-	transition: border ease 0.3s;
+	transition: border-color ease 0.3s;
+	z-index: 9;
 
 	&:focus,
 	&:hover {
 		outline: none;
 		cursor: pointer;
-		border-color: $secondary;
+		border-color: $secondary-100;
 	}
-
 	&.slick-prev {
 		left: 0;
 		border-top: 0;
@@ -183,5 +164,8 @@
 	&.slick-next {
 		right: 0;
 		transform: rotate(-135deg);
+	}
+	&.slick-hidden {
+		display: none;
 	}
 }

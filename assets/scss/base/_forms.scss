@@ -69,7 +69,7 @@ textarea {
 select {
 	-webkit-appearance: none;
 	padding-right: 1.875em;
-	background-image: url(#{$img}/select-down-arrow.svg);
+	background-image: image("select-down-arrow.svg");
 	background-size: rem(14px) rem(7px);
 	background-position: right 0.5em center;
 	background-repeat: no-repeat;
@@ -173,7 +173,7 @@ select:-webkit-autofill:focus {
 			display: block;
 			width: rem(5px);
 			height: rem(10px);
-			border: solid $secondary;
+			border: solid $secondary-100;
 			border-width: 0 rem(2px) rem(2px) 0;
 			transform: rotate(42deg);
 		}
@@ -189,7 +189,7 @@ select:-webkit-autofill:focus {
 			margin-right: rem(8px);
 			padding: rem(8px);
 			background-color: transparent;
-			border: rem(2px) solid $secondary;
+			border: rem(2px) solid $secondary-100;
 			-webkit-appearance: none;
 			cursor: pointer;
 		}

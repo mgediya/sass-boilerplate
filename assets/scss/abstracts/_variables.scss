@@ -10,8 +10,8 @@ $icon-family: "zealplus" !important;
 $font-size-base:  rem($base) !default; //16px (Don't change)
 
 // Colors
-$primary :   #1eb2a6 !default;
-$secondary : #ffa34d !default;
+$primary-100:   #1eb2a6 !default;
+$secondary-100: #ffa34d !default;
 
 // Start with assigning color names to specific hex values.
 $white:  #ffffff !default;
@@ -26,12 +26,6 @@ $body-color:    $black !default;
 $text-color:   $black !default ;
 
 // Heading font Size
-$h1-size: rem(52px) !default;
-$h2-size: rem(42px) !default;
-$h3-size: rem(36px) !default;
-$h4-size: rem(24px) !default;
-$h5-size: rem(20px) !default;
-$h6-size: rem(18px) !default;
 $headingSize: (
   'h1': rem(50px),
   'h2': rem(40px),
@@ -61,8 +55,8 @@ $input-color:              $black;
 $input-color-placeholder:  rgba($black,0.5);
 $input-height-base:        rem(42px);
 $input-radius:             0;
-$input-border-color:       $secondary;
-$input-border-color-focus: $secondary;
+$input-border-color:       $secondary-100;
+$input-border-color-focus: $secondary-100;
 $textarea-height-base:     rem(150px);
 
 // Set assets path
@@ -79,7 +73,8 @@ $breakpoints: (
   'sm': 576px, // Small devices (landscape phones, 576px and up)
   'md': 768px, // Medium devices (tablets, 768px and up)
   'lg': 992px, // Large devices (desktops, 992px and up)
-  'xl': 1200px // Extra large devices (large desktops, 1200px and up)
+  'xl': 1200px, // Extra large devices (large desktops, 1200px and up)
+  'xxl': 1400px // Extra large devices (large desktops, 1400px and up)
 );
 
 // Advance utilities
