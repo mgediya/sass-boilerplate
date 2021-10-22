@@ -1437,7 +1437,7 @@ select:-webkit-autofill:focus {
       vertical-align: middle;
       height: 0.63rem;
       width: 0.63rem;
-      margin-top: -rem(3px);
+      margin-top: 0.19rem;
       margin-right: 0.63rem;
       background-color: #ffffff;
       border: 0.13rem solid #ffffff;
