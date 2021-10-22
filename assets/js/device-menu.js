@@ -1,3 +1,4 @@
+var $ = jQuery.noConflict();
 $(() => {
     /* Responsive Jquery Navigation */
     var $hamBurger = $('.hamburger');
