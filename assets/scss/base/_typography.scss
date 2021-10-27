@@ -20,6 +20,7 @@ body {
 	line-height: 1.5;
 	background-color: $body-bg;
 	// @include custom-scroll;
+	word-break: break-word;
 	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 		height: 100%;
 	}
