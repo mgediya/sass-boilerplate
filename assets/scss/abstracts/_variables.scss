@@ -22,9 +22,6 @@ $gray:   #dee3e2 !default;
 $body-bg:       $white !default;
 $body-color:    $black !default;
 
-// Text color
-$text-color:   $black !default ;
-
 // Heading font Size
 $headingSize: (
   'h1': rem(50px),
@@ -39,10 +36,10 @@ $hgroup-margin-bottom: rem(15px) !default;
 $hgroup-font-family:   inherit !default;
 $hgroup-font-weight:   700 !default;
 $hgroup-line-height:   1.1 !default;
-$hgroup-color:         $text-color !default;
+$hgroup-color:         $black !default;
 
 // Forms
-$label-color:           $text-color;
+$label-color:           $black;
 $label-font-weight:     400;
 $label-font-family:     $font-family-base;
 $label-font-size:       rem(14px);

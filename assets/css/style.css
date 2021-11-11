@@ -1383,10 +1383,12 @@ textarea {
 select {
   -webkit-appearance: none;
   padding-right: 1.875em;
+  background-color: transparent;
   background-image: url("../images/select-down-arrow.svg");
   background-size: 0.88rem 0.44rem;
   background-position: right 0.5em center;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  cursor: pointer; }
 
 select:focus {
   outline: none; }
