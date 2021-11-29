@@ -1,9 +1,15 @@
 /*--- header ---*/
 .main-header {
+	position: relative;
 	width: 100%;
 	height: auto;
+	background-color: $white;
+	z-index: 999;
 	.brand {
 		width: rem(200px);
+		@include respond-below(md) {
+			width: rem(100px);
+		}
 	}
 	/* nav */
 	.navigation {

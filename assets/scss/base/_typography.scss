@@ -24,6 +24,9 @@ body {
 	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 		height: 100%;
 	}
+	&.scroll-fixed {
+		overflow: hidden;
+	}
 }
 
 // Heading style

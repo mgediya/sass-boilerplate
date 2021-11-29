@@ -5,8 +5,8 @@
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: $gutters / 2;
-    padding-right: $gutters / 2;
+    padding-left: $gutters;
+    padding-right: $gutters;
     @include respond-below(md) {
         padding-left: rem(20px);
         padding-right: rem(20px);
@@ -17,8 +17,6 @@
     max-width: $container-width + $gutters;
     &-fluid {
         @extend %container;
-        padding-right: rem(50px);
-        padding-left: rem(50px);
     }
 }
 

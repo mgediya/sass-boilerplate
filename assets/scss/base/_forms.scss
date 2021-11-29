@@ -159,7 +159,8 @@ select:-webkit-autofill:focus {
 	}
 }
 // Custom Checkbox
-.checkbox {
+.checkbox,
+.gfield_checkbox {
 	input[type="checkbox"] {
 		display: none;
 		width: initial;

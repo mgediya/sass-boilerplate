@@ -7,7 +7,8 @@ $(() => {
         $hamBurger.removeClass('is-clicked');
         $('body').removeClass('scroll-fixed');
         $('.mbnav').removeClass('is-open');
-        $('.mbnav .menu li').removeClass('is-open');
+        $('.mbnav .menu-wrap li').removeClass('is-open');
+        $('.mbnav__inner > .menu-wrap').css('--leftSlide', '0');
     }
 
     /* Mobile overlay click */
@@ -39,14 +40,14 @@ $(() => {
     }
 
     // wrap Div
-    $(".mbnav__inner ul").wrap("<div class='menu-wrap'><div class='menu-inner'></div></div>");
+    $(".mbnav__inner > *").wrapAll("<div class='menu-wrap'><div class='menu-inner'></div></div>");
+    $(".mbnav__inner ul li.has-sub ul").wrap("<div class='menu-wrap'><div class='menu-inner'></div></div>");
 
     /* menu open and close on single click */
     $('.mbnav .has-sub>.trigger-caret').click(function () {
         var element = $(this).parent('li');
         var elementUl = $(this).parent().parent('ul').parent().parent('.menu-wrap');
         element.addClass('is-open');
-        $(this).next().show();
         $('body').addClass('scroll-fixed');
     });
     var ulLiEm = '.menu-wrap > .menu-inner > ul > li';
@@ -72,4 +73,5 @@ $(() => {
             menuLeftMove.css('--leftSlide', '200%');
         }
     });
+    $('.mbnav .menu-wrap > .menu-inner').css('padding-top', $('header.main-header').outerHeight());
 });
