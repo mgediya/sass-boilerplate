@@ -189,7 +189,7 @@
     @if ($position== "left") {
         padding-left: calc((100% - #{$value}) / 2);
         > div {
-            padding-left: $gutters / 2;
+            padding-left: $gutters;
 
             @include respond-below(md) {
                 padding-left: rem(20px);
@@ -198,7 +198,7 @@
     } @else if($position== "right") {
         padding-right: calc((100% - #{$value}) / 2);
         > div {
-            padding-right: $gutters / 2;
+            padding-right: $gutters;
 
             @include respond-below(md) {
                 padding-right: rem(20px);

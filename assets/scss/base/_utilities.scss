@@ -14,7 +14,7 @@
 }
 .container {
     @extend %container;
-    max-width: $container-width + $gutters;
+    max-width: $container-width + $gutters * 2;
     &-fluid {
         @extend %container;
     }
