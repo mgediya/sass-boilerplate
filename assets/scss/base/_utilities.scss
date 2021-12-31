@@ -24,8 +24,8 @@
 .row {
     display: flex;
     flex-wrap: wrap;
-    margin-right: -$row-gutters / 2;
-    margin-left: -$row-gutters / 2;
+    margin-right: calc(-#{$row-gutters} / 2);
+    margin-left: calc(-#{$row-gutters} / 2);
 
     &.no-gutters {
         margin-right: 0;
@@ -41,8 +41,8 @@
 [class*="cell-"] {
     position: relative;
     width: 100%;
-    padding-left: $row-gutters / 2;
-    padding-right: $row-gutters / 2;
+    padding-left: calc(#{$row-gutters} / 2);
+    padding-right: calc(#{$row-gutters} / 2);
 }
 
 /* align item */
