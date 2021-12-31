@@ -24,11 +24,11 @@ $decimal-value: true;
     }
 
     @if $mode==round {
-        @return round($number * $n) / $n;
+        @return calc(round($number * $n) / $n);
     } @else if $mode==ceil {
-        @return ceil($number * $n) / $n;
+        @return calc(ceil($number * $n) / $n);
     } @else if $mode==floor {
-        @return floor($number * $n) / $n;
+        @return calc(floor($number * $n) / $n);
     } @else {
         @warn "#{$mode} is undefined keyword.";
         @return $number;
@@ -46,7 +46,7 @@ $decimal-value: true;
 // PX to REM
 @function rem($target, $context: $base) {
     @if ($decimal-value==true) {
-        @return decimal-ceil($target / $context) + 0rem;
+        @return decimal-ceil(calc($target / $context)) + 0rem;
     } @else {
         @return ($target / $context)+0rem;
     }
@@ -63,7 +63,7 @@ $decimal-value: true;
 
 // PX to PERCENT
 @function pxtopercent($target, $parent: $base) {
-    @return percentage($target / $parent);
+    @return percentage(calc($target / $parent));
 }
 
 // aspect-ratio
@@ -95,3 +95,20 @@ $decimal-value: true;
 @function ls($val) {
     @return ($val / 1000) * 1em;
 }
+
+// // css min,max,clamp properties
+// @function css-function($function, $values...) {
+//     @return $function + unquote("(") + $values + unquote(")");
+// }
+
+// @function min($values...) {
+//     @return css-function(min, $values);
+// }
+
+// @function max($values...) {
+//     @return css-function(max, $values);
+// }
+
+// @function clamp($values...) {
+//     @return css-function(clamp, $values);
+// }

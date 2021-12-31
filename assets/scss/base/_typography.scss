@@ -40,7 +40,7 @@ body {
 		font-weight: $hgroup-font-weight;
 		line-height: $hgroup-line-height;
 		@include respond-below(md) {
-			font-size: $size / 1.5;
+			font-size: calc($size / 1.5);
 		}
 		a {
 			display: block;
