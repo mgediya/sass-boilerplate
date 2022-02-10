@@ -278,7 +278,7 @@ h1,
   @media (max-width: 767px) {
     h1,
     .h1 {
-      font-size: 2.0866666667rem; } }
+      font-size: calc($size / 1.5); } }
   h1 a,
   .h1 a {
     display: block;
@@ -296,7 +296,7 @@ h2,
   @media (max-width: 767px) {
     h2,
     .h2 {
-      font-size: 1.6666666667rem; } }
+      font-size: calc($size / 1.5); } }
   h2 a,
   .h2 a {
     display: block;
@@ -314,7 +314,7 @@ h3,
   @media (max-width: 767px) {
     h3,
     .h3 {
-      font-size: 1.2933333333rem; } }
+      font-size: calc($size / 1.5); } }
   h3 a,
   .h3 a {
     display: block;
@@ -332,7 +332,7 @@ h4,
   @media (max-width: 767px) {
     h4,
     .h4 {
-      font-size: 1.0466666667rem; } }
+      font-size: calc($size / 1.5); } }
   h4 a,
   .h4 a {
     display: block;
@@ -350,7 +350,7 @@ h5,
   @media (max-width: 767px) {
     h5,
     .h5 {
-      font-size: 0.8333333333rem; } }
+      font-size: calc($size / 1.5); } }
   h5 a,
   .h5 a {
     display: block;
@@ -368,7 +368,7 @@ h6,
   @media (max-width: 767px) {
     h6,
     .h6 {
-      font-size: 0.7533333333rem; } }
+      font-size: calc($size / 1.5); } }
   h6 a,
   .h6 a {
     display: block;
@@ -491,14 +491,14 @@ table {
       padding-right: 1.25rem; } }
 
 .container {
-  max-width: 76.26rem; }
+  max-width: 79.39rem; }
 
 /* row and column */
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin-right: -0.94rem;
-  margin-left: -0.94rem; }
+  margin-right: calc(-1.88rem / 2);
+  margin-left: calc(-1.88rem / 2); }
   .row.no-gutters {
     margin-right: 0;
     margin-left: 0; }
@@ -509,8 +509,8 @@ table {
 [class*="cell-"] {
   position: relative;
   width: 100%;
-  padding-left: 0.94rem;
-  padding-right: 0.94rem; }
+  padding-left: calc(1.88rem / 2);
+  padding-right: calc(1.88rem / 2); }
 
 /* align item */
 .d-none {
@@ -1491,7 +1491,8 @@ select:-webkit-autofill:focus {
   justify-content: space-between;
   align-content: space-between;
   width: 100%;
-  min-height: 100%; }
+  min-height: 100%;
+  overflow: hidden; }
 
 .main-container {
   width: 100%; }
@@ -1776,16 +1777,18 @@ select:-webkit-autofill:focus {
     @media (max-width: 767px) {
       .main-header .brand {
         width: 6.25rem; } }
-  .main-header .navigation ul {
-    padding: 0;
-    margin: 0;
-    list-style: none; }
-    .main-header .navigation ul li {
+  .main-header .navigation {
+    word-break: keep-all; }
+    .main-header .navigation ul {
       padding: 0;
       margin: 0;
       list-style: none; }
-      .main-header .navigation ul li a {
-        text-decoration: none; }
+      .main-header .navigation ul li {
+        padding: 0;
+        margin: 0;
+        list-style: none; }
+        .main-header .navigation ul li a {
+          text-decoration: none; }
 
 /*--- footer ---*/
 .main-footer {
