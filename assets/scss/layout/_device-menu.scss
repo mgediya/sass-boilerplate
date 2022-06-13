@@ -99,15 +99,6 @@ $humburgerBase: 30px;
         display: block;
     }
 
-    &.is-open {
-        .btn-wrap {
-            transform: translateY(0);
-        }
-        + header {
-            // position: fixed;
-        }
-    }
-
     &__state {
         position: fixed;
         top: 0;
@@ -391,10 +382,15 @@ $humburgerBase: 30px;
 
     // after open
     &.is-open {
+        + header {
+            // position: fixed;
+        }
+        .btn-wrap {
+            transform: translateY(0);
+        }
         #{$mbnav}__state {
             left: 0;
         }
-
         #{$mbnav}__backdrop {
             opacity: 1;
             z-index: 999;

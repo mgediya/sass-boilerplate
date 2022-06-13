@@ -1,7 +1,7 @@
 /**
  * Main content containers
  */
- %container {
+%container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -24,8 +24,8 @@
 .row {
     display: flex;
     flex-wrap: wrap;
-    margin-right: calc(-#{$row-gutters} / 2);
-    margin-left: calc(-#{$row-gutters} / 2);
+    margin-right: $row-gutters * 0.5 * -1;
+    margin-left: $row-gutters * 0.5 * -1;
 
     &.no-gutters {
         margin-right: 0;
@@ -41,8 +41,8 @@
 [class*="cell-"] {
     position: relative;
     width: 100%;
-    padding-left: calc(#{$row-gutters} / 2);
-    padding-right: calc(#{$row-gutters} / 2);
+    padding-left: $row-gutters * 0.5;
+    padding-right: $row-gutters * 0.5;
 }
 
 /* align item */

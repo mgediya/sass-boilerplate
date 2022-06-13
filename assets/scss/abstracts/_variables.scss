@@ -4,7 +4,7 @@
 // Regular ( Open Sans ) font family
 $font-family-base:  'Open Sans', 'Arial', sans-serif !default;
 // $font-family-hgroup:  'Open Sans', 'Arial', sans-serif !default;
-$icon-family: "zealplus" !important;
+$icon-family: "iconfontfamily" !important;
 
 // body contect text size
 $font-size-base:  rem($base) !default; //16px (Don't change)
@@ -67,11 +67,11 @@ $row-gutters: rem(30px);
 
 // Media Query breakpoints.
 $breakpoints: (
-  'sm': 576px, // Small devices (landscape phones, 576px and up)
-  'md': 768px, // Medium devices (tablets, 768px and up)
-  'lg': 992px, // Large devices (desktops, 992px and up)
-  'xl': 1200px, // Extra large devices (large desktops, 1200px and up)
-  'xxl': 1400px // Extra large devices (large desktops, 1400px and up)
+  'sm': 576px, // Mobile Devices
+  'md': 768px, // Mobile Devices
+  'lg': 992px, // Tablet Devices
+  'xl': 1200px, // Laptop Devices
+  'xxl': 1400px // Desktop Devices
 );
 
 // Advance utilities

@@ -2,8 +2,8 @@
  * Basic typography style for copy text
  */
 html {
-	@include rem-baseline(16px);
 	height: 100%;
+	@include rem-baseline(16px);
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 }
@@ -20,7 +20,6 @@ body {
 	line-height: 1.5;
 	background-color: $body-bg;
 	// @include custom-scroll;
-	word-break: break-word;
 	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 		height: 100%;
 	}
@@ -39,20 +38,36 @@ body {
 		font-size: $size;
 		font-weight: $hgroup-font-weight;
 		line-height: $hgroup-line-height;
-		@include respond-below(md) {
-			font-size: calc($size / 1.5);
-		}
+		word-break: break-word;
 		a {
 			display: block;
 			color: inherit;
 			text-decoration: none;
 		}
 		@if $key == "h1" {
+			@include respond-below(md) {
+				font-size: $size / 1.5;
+			}
 		} @else if $key == "h2" {
+			@include respond-below(md) {
+				font-size: $size / 1.5;
+			}
 		} @else if $key == "h3" {
+			@include respond-below(md) {
+				font-size: $size / 1.5;
+			}
 		} @else if $key == "h4" {
+			@include respond-below(md) {
+				font-size: $size / 1.5;
+			}
 		} @else if $key == "h5" {
+			@include respond-below(md) {
+				font-size: $size / 1.5;
+			}
 		} @else if $key == "h6" {
+			@include respond-below(md) {
+				font-size: $size / 1.5;
+			}
 		}
 	}
 }

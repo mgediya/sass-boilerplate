@@ -238,14 +238,14 @@ sup {
 audio,
 video,
 iframe {
-  display: inline-block; }
+  display: block; }
 
 /**
  * Basic typography style for copy text
  */
 html {
-  font-size: 100%;
   height: 100%;
+  font-size: 100%;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%; }
 
@@ -259,8 +259,7 @@ body {
   font-size: 1rem;
   font-family: "Open Sans", "Arial", sans-serif;
   line-height: 1.5;
-  background-color: #ffffff;
-  word-break: break-word; }
+  background-color: #ffffff; }
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     body {
       height: 100%; } }
@@ -274,16 +273,17 @@ h1,
   font-family: inherit;
   font-size: 3.13rem;
   font-weight: 700;
-  line-height: 1.1; }
-  @media (max-width: 767px) {
-    h1,
-    .h1 {
-      font-size: calc($size / 1.5); } }
+  line-height: 1.1;
+  word-break: break-word; }
   h1 a,
   .h1 a {
     display: block;
     color: inherit;
     text-decoration: none; }
+  @media (max-width: 767px) {
+    h1,
+    .h1 {
+      font-size: 2.0866666667rem; } }
 
 h2,
 .h2 {
@@ -292,16 +292,17 @@ h2,
   font-family: inherit;
   font-size: 2.5rem;
   font-weight: 700;
-  line-height: 1.1; }
-  @media (max-width: 767px) {
-    h2,
-    .h2 {
-      font-size: calc($size / 1.5); } }
+  line-height: 1.1;
+  word-break: break-word; }
   h2 a,
   .h2 a {
     display: block;
     color: inherit;
     text-decoration: none; }
+  @media (max-width: 767px) {
+    h2,
+    .h2 {
+      font-size: 1.6666666667rem; } }
 
 h3,
 .h3 {
@@ -310,16 +311,17 @@ h3,
   font-family: inherit;
   font-size: 1.94rem;
   font-weight: 700;
-  line-height: 1.1; }
-  @media (max-width: 767px) {
-    h3,
-    .h3 {
-      font-size: calc($size / 1.5); } }
+  line-height: 1.1;
+  word-break: break-word; }
   h3 a,
   .h3 a {
     display: block;
     color: inherit;
     text-decoration: none; }
+  @media (max-width: 767px) {
+    h3,
+    .h3 {
+      font-size: 1.2933333333rem; } }
 
 h4,
 .h4 {
@@ -328,16 +330,17 @@ h4,
   font-family: inherit;
   font-size: 1.57rem;
   font-weight: 700;
-  line-height: 1.1; }
-  @media (max-width: 767px) {
-    h4,
-    .h4 {
-      font-size: calc($size / 1.5); } }
+  line-height: 1.1;
+  word-break: break-word; }
   h4 a,
   .h4 a {
     display: block;
     color: inherit;
     text-decoration: none; }
+  @media (max-width: 767px) {
+    h4,
+    .h4 {
+      font-size: 1.0466666667rem; } }
 
 h5,
 .h5 {
@@ -346,16 +349,17 @@ h5,
   font-family: inherit;
   font-size: 1.25rem;
   font-weight: 700;
-  line-height: 1.1; }
-  @media (max-width: 767px) {
-    h5,
-    .h5 {
-      font-size: calc($size / 1.5); } }
+  line-height: 1.1;
+  word-break: break-word; }
   h5 a,
   .h5 a {
     display: block;
     color: inherit;
     text-decoration: none; }
+  @media (max-width: 767px) {
+    h5,
+    .h5 {
+      font-size: 0.8333333333rem; } }
 
 h6,
 .h6 {
@@ -364,16 +368,17 @@ h6,
   font-family: inherit;
   font-size: 1.13rem;
   font-weight: 700;
-  line-height: 1.1; }
-  @media (max-width: 767px) {
-    h6,
-    .h6 {
-      font-size: calc($size / 1.5); } }
+  line-height: 1.1;
+  word-break: break-word; }
   h6 a,
   .h6 a {
     display: block;
     color: inherit;
     text-decoration: none; }
+  @media (max-width: 767px) {
+    h6,
+    .h6 {
+      font-size: 0.7533333333rem; } }
 
 p {
   margin-bottom: 0.94rem; }
@@ -497,8 +502,8 @@ table {
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin-right: calc(-1.88rem / 2);
-  margin-left: calc(-1.88rem / 2); }
+  margin-right: -0.94rem;
+  margin-left: -0.94rem; }
   .row.no-gutters {
     margin-right: 0;
     margin-left: 0; }
@@ -509,8 +514,8 @@ table {
 [class*="cell-"] {
   position: relative;
   width: 100%;
-  padding-left: calc(1.88rem / 2);
-  padding-right: calc(1.88rem / 2); }
+  padding-left: 0.94rem;
+  padding-right: 0.94rem; }
 
 /* align item */
 .d-none {
@@ -1224,8 +1229,8 @@ table {
 input[type="reset"],
 input[type="submit"] {
   display: inline-block;
-  padding: 0.63rem 0.94rem;
   vertical-align: top;
+  padding: 0.63rem 0.94rem;
   color: #ffffff;
   font-size: 1rem;
   line-height: 1.5;
@@ -1268,11 +1273,11 @@ input[type="submit"] {
 form label {
   display: block;
   margin-bottom: 0.63rem;
-  line-height: 1.5;
-  font-weight: 400;
+  color: #000000;
   font-family: "Open Sans", "Arial", sans-serif;
   font-size: 0.88rem;
-  color: #000000; }
+  font-weight: 400;
+  line-height: 1.5; }
 
 input,
 textarea,
@@ -1396,6 +1401,9 @@ select:focus {
 select::-ms-expand {
   display: none; }
 
+button {
+  cursor: pointer; }
+
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
@@ -1423,8 +1431,8 @@ select:-webkit-autofill:focus {
   .radio-btn-group .radio-option:first-child {
     padding-left: 0; }
   .radio-btn-group .radio-option .radio-custom {
-    opacity: 0;
-    position: absolute; }
+    position: absolute;
+    opacity: 0; }
     .radio-btn-group .radio-option .radio-custom:focus + .radio-custom-label {
       outline: none; }
     .radio-btn-group .radio-option .radio-custom:checked + .radio-custom-label:before {
@@ -1483,6 +1491,9 @@ select:-webkit-autofill:focus {
     border: 0.13rem solid #ffa34d;
     -webkit-appearance: none;
     cursor: pointer; }
+
+#wpadminbar {
+  position: fixed; }
 
 .wrapper {
   position: relative;
@@ -1568,8 +1579,6 @@ select:-webkit-autofill:focus {
   @media (max-width: 991px) {
     .mbnav {
       display: block; } }
-  .mbnav.is-open .btn-wrap {
-    transform: translateY(0); }
   .mbnav__state {
     position: fixed;
     top: 0;
@@ -1718,7 +1727,7 @@ select:-webkit-autofill:focus {
       font-weight: 400; }
       .mbnav ul .back-click::before {
         content: "a";
-        font-family: "zealplus" !important;
+        font-family: "iconfontfamily" !important;
         font-style: normal;
         font-variant: normal;
         font-weight: normal;
@@ -1757,6 +1766,8 @@ select:-webkit-autofill:focus {
     .mbnav__overlay.is-show {
       opacity: 1;
       visibility: visible; }
+  .mbnav.is-open .btn-wrap {
+    transform: translateY(0); }
   .mbnav.is-open .mbnav__state {
     left: 0; }
   .mbnav.is-open .mbnav__backdrop {
