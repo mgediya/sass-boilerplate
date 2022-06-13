@@ -185,7 +185,7 @@
 }
 
 // Container Spacing
-@mixin container-space($position: "", $value: $container-width + $gutters) {
+@mixin container-space($position: "", $value: $container-width + $gutters  * 2) {
     @if ($position== "left") {
         padding-left: calc((100% - #{$value}) / 2);
         > div {
