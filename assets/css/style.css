@@ -238,7 +238,8 @@ sup {
 audio,
 video,
 iframe {
-  display: block; }
+  display: block;
+  max-width: 100%; }
 
 /**
  * Basic typography style for copy text
@@ -485,18 +486,16 @@ table {
  * Main content containers
  */
 .container, .container-fluid {
-  width: 100%;
+  --gutter: 3.13rem;
+  width: min(calc(100% - var(--gutter) * 2), calc(var(--container-width, none)));
   margin-left: auto;
-  margin-right: auto;
-  padding-left: 3.13rem;
-  padding-right: 3.13rem; }
+  margin-right: auto; }
   @media (max-width: 767px) {
     .container, .container-fluid {
-      padding-left: 1.25rem;
-      padding-right: 1.25rem; } }
+      --gutter: 1.25rem; } }
 
 .container {
-  max-width: 79.39rem; }
+  --container-width: 73.13rem; }
 
 /* row and column */
 .row {
@@ -1784,6 +1783,8 @@ select:-webkit-autofill:focus {
   z-index: 999;
   /* nav */ }
   .main-header .brand {
+    display: inline-flex;
+    vertical-align: middle;
     width: 12.5rem; }
     @media (max-width: 767px) {
       .main-header .brand {
@@ -1807,5 +1808,13 @@ select:-webkit-autofill:focus {
   height: auto;
   background: #1eb2a6;
   line-height: normal; }
+
+.hero-style {
+  padding-left: calc((100% - 79.39rem) / 2); }
+  .hero-style > div {
+    padding-left: 3.13rem; }
+    @media (max-width: 767px) {
+      .hero-style > div {
+        padding-left: 1.25rem; } }
 
 /*# sourceMappingURL=style.css.map */

@@ -5,15 +5,21 @@
 	height: auto;
 	background-color: $white;
 	z-index: 999;
+
 	.brand {
+		display: inline-flex;
+		vertical-align: middle;
 		width: rem(200px);
+
 		@include respond-below(md) {
 			width: rem(100px);
 		}
 	}
+
 	/* nav */
 	.navigation {
 		word-break: keep-all;
+
 		ul {
 			padding: 0;
 			margin: 0;
