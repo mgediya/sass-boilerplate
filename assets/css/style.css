@@ -1496,16 +1496,15 @@ select:-webkit-autofill:focus {
 
 .wrapper {
   position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: space-between;
+  display: grid;
+  grid-template: 1fr auto / 1fr;
   width: 100%;
   min-height: 100%;
   overflow: hidden; }
 
 .main-container {
-  width: 100%; }
+  width: 100%;
+  align-self: start; }
 
 .slick-dots li {
   padding: 0 0.32rem; }
@@ -1806,8 +1805,9 @@ select:-webkit-autofill:focus {
 .main-footer {
   width: 100%;
   height: auto;
-  background: #1eb2a6;
-  line-height: normal; }
+  align-self: end;
+  line-height: normal;
+  background: #1eb2a6; }
 
 .hero-style {
   padding-left: calc((100% - 79.39rem) / 2); }
