@@ -13,8 +13,7 @@
 	background-color: $primary-100;
 	transition: background-color 0.3s ease 0s, color 0.3s ease 0s, border-color 0.3s ease 0s;
 
-	&:hover,
-	&:focus,
+	&:is(:hover, :focus),
 	a:hover & {
 		color: $white;
 		text-decoration: none;
@@ -22,8 +21,10 @@
 		cursor: pointer;
 	}
 }
+
 .btn {
 	@extend %btn;
+
 	&-link {
 		margin-bottom: rem(2px);
 		color: $primary-100;

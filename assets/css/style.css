@@ -386,26 +386,15 @@ p {
   p:last-child {
     margin-bottom: 0; }
 
-ul {
-  padding-left: 0.63rem;
-  margin-bottom: 0.94rem; }
-  ul ul {
-    margin-bottom: 0; }
-  ul li {
-    padding-top: 0.38rem;
-    padding-bottom: 0.38rem; }
-    ul li:last-child {
-      padding-bottom: 0; }
-
-ol {
+:is(ul, ol) {
   padding-left: 1.25rem;
   margin-bottom: 0.94rem; }
-  ol ol {
+  :is(ul, ol) :is(ul, ol) {
     margin-bottom: 0; }
-  ol li {
+  :is(ul, ol) li {
     padding-top: 0.38rem;
     padding-bottom: 0.38rem; }
-    ol li:last-child {
+    :is(ul, ol) li:last-child {
       padding-bottom: 0; }
 
 blockquote {
@@ -487,7 +476,7 @@ table {
  */
 .container, .container-fluid {
   --gutter: 3.13rem;
-  width: min(calc(100% - var(--gutter) * 2), calc(var(--container-width, none)));
+  width: min(100% - var(--gutter) * 2, var(--container-width, none));
   margin-left: auto;
   margin-right: auto; }
   @media (max-width: 767px) {
@@ -1240,11 +1229,9 @@ input[type="submit"] {
   border-radius: 0;
   background-color: #1eb2a6;
   transition: background-color 0.3s ease 0s, color 0.3s ease 0s, border-color 0.3s ease 0s; }
-  .btn:hover, input[type="button"]:hover,
-  input[type="reset"]:hover,
-  input[type="submit"]:hover, .btn:focus, input[type="button"]:focus,
-  input[type="reset"]:focus,
-  input[type="submit"]:focus, a:hover .btn, a:hover input[type="button"],
+  .btn:is(:hover, :focus), input[type="button"]:is(:hover, :focus),
+  input[type="reset"]:is(:hover, :focus),
+  input[type="submit"]:is(:hover, :focus), a:hover .btn, a:hover input[type="button"],
   a:hover input[type="reset"],
   a:hover input[type="submit"] {
     color: #ffffff;
@@ -1278,10 +1265,7 @@ form label {
   font-weight: 400;
   line-height: 1.5; }
 
-input,
-textarea,
-button,
-select {
+:is(input, textarea, button, select) {
   font-family: "Open Sans", "Arial", sans-serif; }
 
 input[type="url"],

@@ -7,6 +7,7 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 // @include respond-above(sm) {}
 @mixin respond-above($breakpoint) {
+
     // If the breakpoint exists in the map.
     @if map-has-key($breakpoints, $breakpoint) {
         // Get the breakpoint value.
@@ -18,7 +19,9 @@
         }
 
         // If the breakpoint doesn't exist in the map.
-    } @else {
+    }
+
+    @else {
         // Log a warning.
         @warn 'Invalid breakpoint: #{$breakpoint}.';
     }
@@ -28,6 +31,7 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 // @include respond-below(sm) {}
 @mixin respond-below($breakpoint) {
+
     // If the breakpoint exists in the map.
     @if map-has-key($breakpoints, $breakpoint) {
         // Get the breakpoint value.
@@ -39,7 +43,9 @@
         }
 
         // If the breakpoint doesn't exist in the map.
-    } @else {
+    }
+
+    @else {
         // Log a warning.
         @warn 'Invalid breakpoint: #{$breakpoint}.';
     }
@@ -49,6 +55,7 @@
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 // @include respond-between(sm, md) {}
 @mixin respond-between($lower, $upper) {
+
     // If both the lower and upper breakpoints exist in the map.
     @if map-has-key($breakpoints, $lower) and map-has-key($breakpoints, $upper) {
         // Get the lower and upper breakpoints.
@@ -61,15 +68,18 @@
         }
 
         // If one or both of the breakpoints don't exist.
-    } @else {
+    }
+
+    @else {
+
         // If lower breakpoint is invalid.
-        @if (map-has-key($breakpoints, $lower) ==false) {
+        @if (map-has-key($breakpoints, $lower)==false) {
             // Log a warning.
             @warn 'Your lower breakpoint was invalid: #{$lower}.';
         }
 
         // If upper breakpoint is invalid.
-        @if (map-has-key($breakpoints, $upper) ==false) {
+        @if (map-has-key($breakpoints, $upper)==false) {
             // Log a warning.
             @warn 'Your upper breakpoint was invalid: #{$upper}.';
         }
@@ -161,7 +171,7 @@
 }
 
 // custom scroll
-@mixin custom-scroll($color1: $secondary) {
+@mixin custom-scroll($color1: $secondary-100) {
     &::-webkit-scrollbar {
         width: 10px;
     }
@@ -185,26 +195,32 @@
 }
 
 // Container Spacing
-@mixin container-space($position: "", $value: $container-width + $gutters  * 2) {
-    @if ($position== "left") {
+@mixin container-space($position: "", $value: $container-width + $gutters * 2) {
+    @if ($position=="left") {
         padding-left: calc((100% - #{$value}) / 2);
-        > div {
+
+        >div {
             padding-left: $gutters;
 
             @include respond-below(md) {
                 padding-left: rem(20px);
             }
         }
-    } @else if($position== "right") {
+    }
+
+    @else if($position=="right") {
         padding-right: calc((100% - #{$value}) / 2);
-        > div {
+
+        >div {
             padding-right: $gutters;
 
             @include respond-below(md) {
                 padding-right: rem(20px);
             }
         }
-    } @else {
+    }
+
+    @else {
         @error 'Wrong input container-space(#{$position}), Please use container-space(left) or container-space(right)';
     }
 }
@@ -212,6 +228,7 @@
 // All heading
 @mixin hgroup {
     @for $i from 1 through 6 {
+
         h#{$i},
         .h#{$i} {
             @content;
@@ -222,6 +239,7 @@
 // Picture Image
 @mixin pictureImg($pos: absolute) {
     position: relative;
+
     picture {
         position: $pos;
         top: 0;
@@ -229,6 +247,7 @@
         width: 100%;
         height: 100%;
         display: block;
+
         img {
             width: 100%;
             height: 100%;
@@ -236,6 +255,7 @@
         }
     }
 }
+
 // Img fit
 @mixin imgFit($pos: absolute) {
     img {
@@ -247,6 +267,7 @@
         object-fit: cover;
     }
 }
+
 // Flex-center
 @mixin flex-center {
     display: flex;

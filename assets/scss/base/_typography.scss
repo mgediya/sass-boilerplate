@@ -97,29 +97,11 @@ p {
 	}
 }
 
-ul {
-	padding-left: rem(10px);
-	margin-bottom: rem(15px);
-
-	ul {
-		margin-bottom: 0;
-	}
-
-	li {
-		padding-top: rem(6px);
-		padding-bottom: rem(6px);
-
-		&:last-child {
-			padding-bottom: 0;
-		}
-	}
-}
-
-ol {
+:is(ul, ol) {
 	padding-left: rem(20px);
 	margin-bottom: rem(15px);
 
-	ol {
+	:is(ul, ol) {
 		margin-bottom: 0;
 	}
 
